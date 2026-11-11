@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Program Bulanan TPB (Pertanian)</title><link rel="stylesheet" href="styles.css">
+</head><body>
+<header class="hero"><div class="hero-inner"><div><div class="eyebrow">PROGRAM BULANAN</div><h1>Timbalan Pengurus Besar (Pertanian)</h1><p>Jadual program, pergerakan dan aktiviti rasmi</p></div><div class="clock" id="clock"></div></div></header>
+<nav class="nav"><a href="#utama">Utama</a><a href="#kalendar">Kalendar</a><a href="#arkib">Arkib 20 Tahun</a><a href="#carian">Carian</a><button id="adminBtn" class="nav-admin">Admin</button></nav>
+<main class="container">
+<div id="connectionStatus" class="card" style="margin-bottom:18px"><strong>Status sambungan:</strong> <span id="connectionText">Memeriksa...</span></div>
+<section class="stats" id="stats"></section>
+<section class="layout"><div><div class="section-head"><div><div class="eyebrow">KALENDAR</div><h2 id="monthTitle"></h2></div><div class="calendar-controls"><button id="prevMonth">‹</button><button id="todayBtn">Hari Ini</button><button id="nextMonth">›</button></div></div><div class="calendar" id="calendar"></div><div class="legend"><span><i class="dot upcoming"></i>Akan Datang</span><span><i class="dot ongoing"></i>Berlangsung</span><span><i class="dot done"></i>Selesai</span><span><i class="dot postponed"></i>Ditangguhkan</span><span><i class="dot cancelled"></i>Dibatalkan</span></div></div>
+<aside><div class="card featured" id="currentCard"></div><div class="card" id="nextCard"></div><div class="two-col"><div class="card"><h3>Arkib Program</h3><p>Rekod sejarah sehingga 20 tahun.</p><a href="#arkib">Lihat Arkib →</a></div><div class="card" id="carian"><h3>Carian Program</h3><input id="searchInput" placeholder="Contoh: MAHA, lawatan."><button id="searchBtn" class="primary">Cari</button></div></div><div class="card search-results hidden" id="searchResults"></div></aside></section>
+<section id="arkib" class="archive card"><div class="section-head"><div><div class="eyebrow">ARKIB</div><h2>Sejarah Program</h2></div><select id="archiveYear"></select></div><div id="archiveList"></div></section>
+<section class="admin-panel hidden" id="adminPanel"><div class="section-head"><div><div class="eyebrow">KAWALAN ADMIN</div><h2>Pengurusan Program</h2></div><button id="logoutBtn">Log Keluar</button></div>
+<form id="programForm" class="form"><input type="hidden" id="programId"><label>Tarikh <input type="date" id="date" required></label><label>Masa mula <input type="time" id="startTime" required></label><label>Masa tamat <input type="time" id="endTime"></label><label>Program <input type="text" id="title" required></label><label>Lokasi <input type="text" id="location"></label><label>Catatan <textarea id="notes"></textarea></label><label>Status<select id="status"><option value="upcoming">Akan Datang</option><option value="ongoing">Sedang Berlangsung</option><option value="done">Selesai</option><option value="postponed">Ditangguhkan</option><option value="cancelled">Dibatalkan</option></select></label>
+<div class="admin-google-box"><strong>Google Calendar TPB(P) — ADMIN SAHAJA</strong><p>Pautan dan ID Google Calendar tidak dipaparkan atau dihantar kepada pengguna biasa.</p><label>Pautan Event Google Calendar <input type="url" id="googleUrl"></label><label>ID Event Google Calendar <input type="text" id="googleEventId"></label><label>ID Calendar <input type="text" id="calendarId"></label></div><div class="form-actions"><button type="submit" class="primary">Simpan</button><button type="button" id="resetForm">Kosongkan</button></div></form><div id="adminTable"></div></section>
+</main><footer><span>Pertanian Maju, Negara Sejahtera</span><span id="lastUpdated"></span></footer>
+<div class="modal hidden" id="loginModal"><div class="modal-box"><button class="close" id="closeLogin">×</button><h2>Log Masuk Admin</h2><p>Hanya pentadbir dibenarkan mengemas kini jadual.</p><form id="loginForm"><input type="email" id="email" placeholder="E-mel admin" required><input type="password" id="password" placeholder="Kata laluan" required><button class="primary">Log Masuk</button><div class="error" id="loginError"></div></form></div></div>
+<script src="config.js"></script><script src="app.js"></script>
+</body></html>
